@@ -1,0 +1,127 @@
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
+  background: #4c4c4c; /* Old browsers */
+
+  background: -moz-linear-gradient(
+    -45deg,
+    #4c4c4c 0%,
+    #595959 12%,
+    #666666 25%,
+    #474747 39%,
+    #2c2c2c 50%,
+    #000000 51%,
+    #111111 60%,
+    #2b2b2b 76%,
+    #1c1c1c 91%,
+    #131313 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #4c4c4c 0%,
+    #595959 12%,
+    #666666 25%,
+    #474747 39%,
+    #2c2c2c 50%,
+    #000000 51%,
+    #111111 60%,
+    #2b2b2b 76%,
+    #1c1c1c 91%,
+    #131313 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #4c4c4c 0%,
+    #595959 12%,
+    #666666 25%,
+    #474747 39%,
+    #2c2c2c 50%,
+    #000000 51%,
+    #111111 60%,
+    #2b2b2b 76%,
+    #1c1c1c 91%,
+    #131313 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  color: whitesmoke;
+  text-align: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.mainbox {
+  position: relative;
+  background-color: #000000;
+  min-width: 300px;
+  min-height: 400px;
+  max-width: 350px;
+  margin: 2rem auto 0;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.mainbox h1 {
+  line-height: 15px;
+}
+
+.mainbox h2 {
+  margin-top: 35px;
+}
+
+.mainbox p {
+  line-height: 10px;
+}
+
+.mainbox span {
+  color: #c76363;
+}
+
+.mainbox .name {
+  width: 150px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 20px;
+  border: solid 4px #c76363;
+  border-radius: 10px;
+  margin-left: 12px;
+  transform: translateY(-5px);
+}
+
+.mainbox .name.error {
+  background-color: #c76363;
+  color: whitesmoke;
+  animation: progress 0.4s infinite forwards;
+}
+
+.mainbox button {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: whitesmoke;
+  margin-left: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-weight: 600;
+  border: none;
+  background-color: #c76363;
+  transform: translateY(-8px);
+  cursor: pointer;
+}
+
+@keyframes progress {
+  0% {
+    background-color: whitesmoke;
+  }
+  50% {
+    background-color: #c76363;
+  }
+  100% {
+    background-color: whitesmoke;
+  }
+}
