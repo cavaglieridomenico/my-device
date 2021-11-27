@@ -85,9 +85,9 @@ code {
 }
 
 .mainbox .name {
-  width: 150px;
+  width: 180px;
   font-family: 'Montserrat Alternates', sans-serif;
-  font-size: 20px;
+  font-size: 26px;
   border: solid 4px #c76363;
   border-radius: 10px;
   margin-left: 12px;
