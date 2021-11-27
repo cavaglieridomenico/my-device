@@ -1,6 +1,6 @@
 body {
   box-sizing: border-box;
-  height: 100vh;
+  height: calc(100vh - 2rem);
   margin: 0;
   font-family: 'Montserrat Alternates', sans-serif;
   -webkit-font-smoothing: antialiased;
