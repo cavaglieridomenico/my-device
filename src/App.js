@@ -63,7 +63,16 @@ const App = () => {
 
   return (
     <div className='mainbox'>
-      <h1>My Device</h1>
+      <div className='title-container'>
+        <h1>My Device</h1>
+        <button
+          onClick={() => {
+            !name ? setError(true) : handleSubmit();
+          }}
+        >
+          Send
+        </button>
+      </div>
       <h2>Name</h2>
       <input
         type='text'
@@ -77,13 +86,6 @@ const App = () => {
           setName(event.target.value);
         }}
       />
-      <button
-        onClick={() => {
-          !name ? setError(true) : handleSubmit();
-        }}
-      >
-        Send
-      </button>
       <h2>Screen</h2>
       <p>
         Width: <span>{myDevice.screenWidth}</span>
@@ -107,7 +109,7 @@ const App = () => {
       </p>
       <h2>Orientation</h2>
       <p>
-        <span>{myDevice.orientation}</span>
+        <span>{myDevice.orientationType}</span>
       </p>
       <p>
         Degree <span>{myDevice.orientationAngle}</span>

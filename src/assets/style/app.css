@@ -1,7 +1,8 @@
 body {
   box-sizing: border-box;
-  height: calc(100vh - 2rem);
   margin: 0;
+  /* align-items: center; */
+  height: 100vh;
   font-family: 'Montserrat Alternates', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -52,6 +53,13 @@ body {
   text-align: center;
 }
 
+/*XS - smartphones landscape*/
+@media all and (min-width: 640px) {
+  body {
+    height: 100%;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -59,26 +67,28 @@ code {
 
 .mainbox {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   background-color: #000000;
-  min-width: 300px;
-  min-height: 400px;
-  max-width: 350px;
-  margin: 2rem auto 0;
+  width: 310px;
   border-radius: 10px;
-  padding: 1rem;
+  margin: 0 auto;
+  padding: 3% 0;
 }
 
 .mainbox h1 {
-  line-height: 15px;
+  display: inline-block;
 }
 
 .mainbox h2 {
-  margin-top: 35px;
+  margin: 0;
 }
 
 .mainbox p {
   font-size: 18px;
-  line-height: 12px;
+  margin: 5px auto 8px;
 }
 
 .mainbox span {
@@ -91,8 +101,7 @@ code {
   font-size: 26px;
   border: solid 4px #c76363;
   border-radius: 10px;
-  margin-left: 12px;
-  transform: translateY(-5px);
+  margin: 5px 0 0 3px;
 }
 
 .mainbox .name.error {
@@ -111,7 +120,7 @@ code {
   font-weight: 600;
   border: none;
   background-color: #c76363;
-  transform: translateY(-8px);
+  transform: translate(20px, -5px);
   cursor: pointer;
 }
 
