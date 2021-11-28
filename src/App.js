@@ -13,10 +13,10 @@ const App = () => {
     intWindowHeight: window.innerHeight,
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setError(false);
     window.print();
-    fetch('https://60b21f9562ab150017ae1b08.mockapi.io/maxServer/links', {
+    await fetch('https://60b21f9562ab150017ae1b08.mockapi.io/maxServer/links', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
