@@ -47,6 +47,8 @@ const App = () => {
       setMyDevice(prevValue => {
         return {
           ...prevValue,
+          screenWidth: window.screen.width,
+          screenHeight: window.screen.height,
           extWindowWidth: window.outerWidth,
           extWindowHeight: window.outerHeight,
           intWindowWidth: window.innerWidth,
