@@ -77,7 +77,8 @@ code {
 }
 
 .mainbox p {
-  line-height: 10px;
+  font-size: 18px;
+  line-height: 12px;
 }
 
 .mainbox span {

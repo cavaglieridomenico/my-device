@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const App = () => {
+  const [name, setName] = useState('');
+  const [error, setError] = useState(false);
   const [myDevice, setMyDevice] = useState({
+    name: name,
     screenWidth: window.screen.width,
     screenHeight: window.screen.height,
     extWindowWidth: window.outerWidth,
@@ -10,15 +13,36 @@ const App = () => {
     intWindowHeight: window.innerHeight,
   });
 
-  const [name, setName] = useState('');
-  const [error, setError] = useState(false);
-
   const handleSubmit = () => {
-    window.print();
     setError(false);
+    window.print();
+    fetch('https://60b21f9562ab150017ae1b08.mockapi.io/maxServer/links', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(myDevice),
+    })
+      .then(response => response.json())
+      .then(data =>
+        window.alert(
+          `Thank you! 
+        Acquired ${data.name}
+        Width: ${data.screenWidth}px
+        Height: ${data.screenHeight}px`
+        )
+      );
+    setName('');
   };
 
   useEffect(() => {
+    setMyDevice(prevValue => {
+      return {
+        ...prevValue,
+        name: name,
+      };
+    });
     window.addEventListener('resize', () =>
       setMyDevice(prevValue => {
         return {
@@ -30,7 +54,7 @@ const App = () => {
         };
       })
     );
-  }, []);
+  }, [name]);
 
   return (
     <div className='mainbox'>
@@ -44,6 +68,9 @@ const App = () => {
           setName(event.target.value);
         }}
         onFocus={() => setError(false)}
+        onBlur={event => {
+          setName(event.target.value);
+        }}
       />
       <button
         onClick={() => {
