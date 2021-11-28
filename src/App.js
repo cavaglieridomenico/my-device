@@ -11,13 +11,10 @@ const App = () => {
     extWindowHeight: window.outerHeight,
     intWindowWidth: window.innerWidth,
     intWindowHeight: window.innerHeight,
-    orientationType: window.screen.orientation.type,
-    orientationAngle: window.screen.orientation.angle,
   });
 
   const handleSubmit = async () => {
     setError(false);
-    window.print();
     await fetch('https://60b21f9562ab150017ae1b08.mockapi.io/maxServer/links', {
       method: 'POST',
       headers: {
@@ -54,8 +51,6 @@ const App = () => {
           extWindowHeight: window.outerHeight,
           intWindowWidth: window.innerWidth,
           intWindowHeight: window.innerHeight,
-          orientationType: window.screen.orientation.type,
-          orientationAngle: window.screen.orientation.angle,
         };
       })
     );
@@ -106,13 +101,6 @@ const App = () => {
       </p>
       <p>
         Height: <span>{myDevice.intWindowHeight}</span>
-      </p>
-      <h2>Orientation</h2>
-      <p>
-        <span>{myDevice.orientationType}</span>
-      </p>
-      <p>
-        Degree <span>{myDevice.orientationAngle}</span>
       </p>
     </div>
   );
