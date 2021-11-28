@@ -11,6 +11,8 @@ const App = () => {
     extWindowHeight: window.outerHeight,
     intWindowWidth: window.innerWidth,
     intWindowHeight: window.innerHeight,
+    orientationType: window.screen.orientation.type,
+    orientationAngle: window.screen.orientation.angle,
   });
 
   const handleSubmit = async () => {
@@ -43,6 +45,7 @@ const App = () => {
         name: name,
       };
     });
+
     window.addEventListener('resize', () =>
       setMyDevice(prevValue => {
         return {
@@ -51,6 +54,8 @@ const App = () => {
           extWindowHeight: window.outerHeight,
           intWindowWidth: window.innerWidth,
           intWindowHeight: window.innerHeight,
+          orientationType: window.screen.orientation.type,
+          orientationAngle: window.screen.orientation.angle,
         };
       })
     );
@@ -99,6 +104,13 @@ const App = () => {
       </p>
       <p>
         Height: <span>{myDevice.intWindowHeight}</span>
+      </p>
+      <h2>Orientation</h2>
+      <p>
+        <span>{myDevice.orientation}</span>
+      </p>
+      <p>
+        Degree <span>{myDevice.orientationAngle}</span>
       </p>
     </div>
   );
