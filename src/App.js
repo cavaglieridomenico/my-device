@@ -70,40 +70,50 @@ const App = () => {
           Send
         </button>
       </div>
-      <h2>Name</h2>
-      <input
-        type='text'
-        className={`name ${error && 'error'}`}
-        value={name}
-        onChange={event => {
-          setName(event.target.value);
-        }}
-        onFocus={() => setError(false)}
-        onBlur={event => {
-          setName(event.target.value);
-        }}
-      />
-      <h2>Screen</h2>
-      <p>
-        Width: <span>{myDevice.screenWidth}</span>
-      </p>
-      <p>
-        Height: <span>{myDevice.screenHeight}</span>
-      </p>
-      <h2>External window</h2>
-      <p>
-        Width: <span>{myDevice.extWindowWidth}</span>
-      </p>
-      <p>
-        Heigth: <span>{myDevice.extWindowHeight}</span>
-      </p>
-      <h2>Internal window</h2>
-      <p>
-        Width: <span>{myDevice.intWindowWidth}</span>
-      </p>
-      <p>
-        Height: <span>{myDevice.intWindowHeight}</span>
-      </p>
+      <div>
+        <h2>Name</h2>
+        <input
+          type='text'
+          className={`name ${error && 'error'}`}
+          value={name}
+          onChange={event => {
+            setName(event.target.value);
+          }}
+          onFocus={() => setError(false)}
+          onBlur={event => {
+            setName(event.target.value);
+          }}
+        />
+      </div>
+      <div className='data'>
+        <div>
+          <h2>Screen</h2>
+          <p>
+            Width: <span>{myDevice.screenWidth}</span>
+          </p>
+          <p>
+            Height: <span>{myDevice.screenHeight}</span>
+          </p>
+        </div>
+        <div>
+          <h2>External window</h2>
+          <p>
+            Width: <span>{myDevice.extWindowWidth}</span>
+          </p>
+          <p>
+            Heigth: <span>{myDevice.extWindowHeight}</span>
+          </p>
+        </div>
+        <div>
+          <h2>Internal window</h2>
+          <p>
+            Width: <span>{myDevice.intWindowWidth}</span>
+          </p>
+          <p>
+            Height: <span>{myDevice.intWindowHeight}</span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
